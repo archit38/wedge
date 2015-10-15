@@ -7,7 +7,7 @@ MyApp.factory('flickrPhotos', function ($resource) {
 
 
 MyApp.controller('WedgeCtrl', function ($scope, flickrPhotos) {
-    $scope.tag = "Nature";
+    $scope.tag = "kittens";
     $scope.loadPhotos = function(){
         $scope.photos = flickrPhotos.load({ tags: $scope.tag });
     }
