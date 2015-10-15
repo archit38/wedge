@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html ng-app="Wedge">
+<head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <title></title>
+</head>
+<body ng-controller="WedgeCtrl as vm">
+    <input type="text"  ng-model="tag" ng-blur="loadPhotos()" placeholder="Enter Tag"/>
+    <div class="row">
+        <div ng-repeat="item in photos.items">
+            <div class=" col-xs-4">
+                <img class="img-rounded img-responsive " ng-src="{{ item.media.m }}" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="Scripts/angular.min.js"></script>
+<script src="app/app.module.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-resource.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="app/main.js"></script>
