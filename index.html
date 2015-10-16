@@ -20,7 +20,9 @@
     <div class="row">
         <div ng-repeat="item in photos.items">
             <div class=" col-xs-4">
-                <img class="img-rounded img-responsive " ng-src="{{ item.media.m }}" />
+                <a target="_blank" ng-href="{{ item.link }}">
+                    <img ng-click = "" class="img-rounded img-responsive " ng-src="{{ item.media.m }}" />
+                </a>
             </div>
         </div>
     </div>
