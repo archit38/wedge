@@ -22,10 +22,10 @@
     width:100%;
     height:100%;
     background: #ffa5a5;
-    background: -moz-linear-gradient(top,  #ffa5a5 0%, #ffd3d3 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffa5a5), color-stop(100%,#ffd3d3));
-    background: -webkit-linear-gradient(top,  #ffa5a5 0%,#ffd3d3 100%);
-    background: linear-gradient(top,  #ffa5a5 0%,#ffd3d3 100%);
+    background: -moz-linear-gradient(top,  ##1EBAFF 0%, ##1EBAFF 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,##1EBAFF), color-stop(100%,##1EBAFF));
+    background: -webkit-linear-gradient(top,  ##1EBAFF 0%,##1EBAFF 100%);
+    background: linear-gradient(top,  ##1EBAFF 0%,##1EBAFF 100%);
 }
 #chest {
     position:relative;
