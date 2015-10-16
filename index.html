@@ -6,7 +6,7 @@
     <title></title>
 </head>
 <body ng-controller="WedgeCtrl as vm">
-    <input type="text"  ng-model="tag" ng-blur="loadPhotos()" placeholder="Enter Tag"/>
+    <input type="text"  ng-model="tag" ng-keypress="keyPressed($event)"ng-blur="loadPhotos()" placeholder="Enter Tag"/>
     <div class="row">
         <div ng-repeat="item in photos.items">
             <div class=" col-xs-4">

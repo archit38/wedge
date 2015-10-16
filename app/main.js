@@ -11,6 +11,10 @@ MyApp.controller('WedgeCtrl', function ($scope, flickrPhotos) {
     $scope.loadPhotos = function(){
         $scope.photos = flickrPhotos.load({ tags: $scope.tag });
     }
+    $scope.keyPressed = function(keyEvent) {
+    	 if (keyEvent.which === 13)
+    	 	 $scope.loadPhotos();
+    }
     $scope.loadPhotos();
 });
    
