@@ -76,6 +76,12 @@
     right:62px;
 }
 
+.glyphicon-heart {
+  position: relative;
+  top: -15px;
+  color: red;
+}
+
 h1{
     font-family: "Courier New", Courier, monospace;
 }

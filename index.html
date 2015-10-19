@@ -18,13 +18,14 @@
     
     <input type="text"  ng-model="tag" ng-keypress="keyPressed($event)"ng-blur="loadPhotos()" placeholder="Enter Tag"/>
     <div class="row">
-        <div ng-repeat="item in photos.items">
-            <div class=" col-xs-4">
-                <a target="_blank" ng-href="{{ item.link }}">
-                    <img ng-click = "" class="img-rounded img-responsive " ng-src="{{ item.media.m }}" />
-                </a>
-            </div>
+        <div ng-repeat="item in photos.items" class="col-md-2">
+            <a target="_blank" ng-href="{{ item.link }}">
+                <img ng-click = "" class="thumbnail img-responsive " ng-src="{{ item.media.m }}" />
+            </a>
         </div>
+        <li ng-repeat="p in pics" class="col-md-2">
+            <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.low_resolution.url}}" /></a>
+        </li>
     </div>
 </body>
 </html>
