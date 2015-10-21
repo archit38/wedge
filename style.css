@@ -81,7 +81,20 @@
   top: -15px;
   color: red;
 }
-
+#slides_control > div{
+  height: 200px;
+}
+img{
+  margin:auto;
+  width: 600px;
+}
+#slides_control {
+  position:absolute;
+  width: 200px;
+  left:50%;
+  top:20px;
+ margin-left:-200px;
+}
 h1{
     font-family: "Courier New", Courier, monospace;
 }

@@ -1,4 +1,4 @@
-var MyApp = angular.module('Wedge', ['ng', 'ngResource']);
+var MyApp = angular.module('Wedge', ['ng', 'ngResource', 'ui.bootstrap']);
 
 MyApp.factory('flickrPhotos', function ($resource) {
     return $resource('http://api.flickr.com/services/feeds/photos_public.gne', { format: 'json', jsoncallback: 'JSON_CALLBACK' }, { 'load': { 'method': 'JSONP' } });
@@ -46,7 +46,7 @@ MyApp.controller('WedgeCtrl', function ($scope, flickrPhotos,instagram) {
 
    $scope.loadPhotos = function(){
         $scope.photos = flickrPhotos.load({ tags: $scope.tag });
-        instagram.get(10, $scope.tag).success(function(response) {
+        instagram.get(100, $scope.tag).success(function(response) {
             $scope.pics = response.data;
         });
     }

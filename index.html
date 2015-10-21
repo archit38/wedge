@@ -8,29 +8,44 @@
 
 </head>
 <body ng-controller="WedgeCtrl as vm">
-    <div id="background"></div>
+<div class="container">
     <h1 class="text-danger text-center hide">I love you Amby</h1>
 <div id="chest" class="hide">
     <div class="heart left side top"></div>
     <div class="heart center">&hearts;</div>
     <div class="heart right side"></div>
 </div>
-    
-    <input type="text"  ng-model="tag" ng-keypress="keyPressed($event)"ng-blur="loadPhotos()" placeholder="Enter Tag"/>
-    <div class="row">
-        <div ng-repeat="item in photos.items" class="col-md-2">
+    <div class="form-group">
+      <label for="tag">Image Tag:</label>
+       <input id="tag" ng-class="form-control" type="text"  ng-model="tag" ng-keypress="keyPressed($event)"ng-blur="loadPhotos()" placeholder="Enter Tag"/>
+    </div>
+   
+    <!--<div class="row">
+        <li ng-repeat="item in photos.items" class="col-md-2">
             <a target="_blank" ng-href="{{ item.link }}">
                 <img ng-click = "" class="thumbnail img-responsive " ng-src="{{ item.media.m }}" />
             </a>
-        </div>
+        </li>
         <li ng-repeat="p in pics" class="col-md-2">
             <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.low_resolution.url}}" /></a>
         </li>
-    </div>
+    </div> -->
+    <carousel interval="3000">
+        <slide ng-repeat="p in pics" active="p.active">
+           <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.standard_resolution.url}}"/></a>
+          <div class="carousel-caption">
+            <p>{{p.caption.text}}</p>
+          </div>
+        </slide>
+    </carousel>
+
+</div>
 </body>
 </html>
 <script src="Scripts/angular.min.js"></script>
 <script src="app/app.module.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-resource.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
 <script src="app/main.js"></script>
