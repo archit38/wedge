@@ -21,6 +21,16 @@ MyApp.factory('instagram', ['$http',
                     }
                 };
                 return $http.jsonp(url, config);
+            },
+            getScoreIDs: function() {
+                var request = 'http://cricscore-api.appspot.com/csa';
+                 var config = {
+                    'params': {
+                        'callback': 'JSON_CALLBACK'
+                    }
+                };
+                 
+                 return $http.get(request);
             }
         };
     }
@@ -45,9 +55,10 @@ MyApp.controller('WedgeCtrl', function ($scope, flickrPhotos,instagram) {
     
 
    $scope.loadPhotos = function(){
-        $scope.photos = flickrPhotos.load({ tags: $scope.tag });
+
         instagram.get(100, $scope.tag).success(function(response) {
             $scope.pics = response.data;
+            $scope.photos = flickrPhotos.load({ tags: $scope.tag });
         });
     }
     $scope.keyPressed = function(keyEvent) {

@@ -17,7 +17,9 @@
 </div>
     <div class="form-group">
       <label for="tag">Image Tag:</label>
-       <input id="tag" ng-class="form-control" type="text"  ng-model="tag" ng-keypress="keyPressed($event)"ng-blur="loadPhotos()" placeholder="Enter Tag"/>
+       <input id="tag" class="form-control" type="text"  ng-model="tag" ng-keypress="keyPressed($event)"ng-blur="loadPhotos()" placeholder="Enter Tag"/>
+
+ <input id="tag" class="form-control btn-success btn-large" type="button"  ng-click="loadPhotos()" value="Refresh" />
     </div>
    
     <!--<div class="row">
@@ -30,15 +32,21 @@
             <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.low_resolution.url}}" /></a>
         </li>
     </div> -->
-    <carousel interval="3000">
+    <carousel  interval="3000">
+         <slide ng-repeat="p in photos.items" active="p.active">
+           <a href="{{p.link}}" target="_blank"><img ng-src="{{p.media.m}}"/></a>
+          <div class="carousel-caption">
+            <p>{{p.tags}}</p>
+          </div>
+        </slide>
         <slide ng-repeat="p in pics" active="p.active">
            <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.standard_resolution.url}}"/></a>
           <div class="carousel-caption">
             <p>{{p.caption.text}}</p>
           </div>
         </slide>
+       
     </carousel>
-
 </div>
 </body>
 </html>
